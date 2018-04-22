@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=0"/>
+    <title>margin方式居中</title>
+    <style>
+        html, body, section {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            position: relative
+        }
+
+        a {
+            color: #39c;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        header {
+            top: 0;
+            position: fixed;
+            padding: .5rem 1rem;
+            background: #def;
+            width: 100%;
+            display: block;
+            z-index: 1;
+        }
+
+        header a {
+            display: inline-block;
+            padding: .5rem;
+        }
+
+        header a:hover {
+            background: #39c;
+            color: #fff
+        }
+
+        .divMargin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 260px;
+            height: 200px;
+            margin-left: -130px;
+            margin-top: -100px;
+        }
+
+        .bgBlue {
+            background: #def;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div><a href="index.html">transform方式</a><a href="margin.html">margin方式</a><a href="table.html">display
+        table方式</a></div>
+</header>
+<section>
+    <div class="bgBlue divMargin">
+        传统中margin为负的方法，需固定元素的宽高。在不知道居中对象高宽的方式下，就不好居中了。<br>
+        如果一定要使用这种方式（比如兼容IE6+），且对象不固定宽高，需要用JS计算对象的高度。<br>
+        <a href="https://github.com/gavinjzx/positionCenter/blob/master/margin.html">查看源代码</a>
+    </div>
+</section>
+</body>
+</html>
