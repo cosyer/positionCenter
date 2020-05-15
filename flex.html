@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width,initial-scale=1 user-scalable=0"
     />
-    <title>transform居中</title>
+    <title>flex方式居中</title>
     <style>
       html,
       body,
@@ -38,25 +38,23 @@
         display: inline-block;
         padding: 0.5rem;
       }
+
       header a:hover {
         background: #39c;
         color: #fff;
       }
 
-      .divTransform {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-      }
-
       .bgBlue {
         background: #def;
         padding: 1rem;
+        /* width: 50%;
+        margin: 0 auto; */
+      }
+
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     </style>
   </head>
@@ -70,11 +68,11 @@
         <a href="flex.html">flex方式</a>
       </div>
     </header>
-    <section>
-      <div class="bgBlue divTransform">
-        使用transform实现页面垂直居中,因为transform是css3属性，在所有的移动端都可以正常显示。IE9+也可以正常显示。传统中margin为负的方法，在不知道浮动对象高宽的方式下，就不好居中了。
-        <a
-          href="https://github.com/cosyer/positionCenter/blob/master/index.html"
+    <section class="flex">
+      <div class="bgBlue">
+        传统中margin为负的方法，需固定元素的宽高。在不知道居中对象高宽的方式下，就不好居中了。<br />
+        如果一定要使用这种方式（比如兼容IE6+），且对象不固定宽高，需要用JS计算对象的高度。<br />
+        <a href="https://github.com/cosyer/positionCenter/blob/master/flex.html"
           >查看源代码</a
         >
       </div>

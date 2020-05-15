@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width,initial-scale=1 user-scalable=0"
     />
-    <title>transform居中</title>
+    <title>margin方式居中</title>
     <style>
       html,
       body,
@@ -38,25 +38,27 @@
         display: inline-block;
         padding: 0.5rem;
       }
+
       header a:hover {
         background: #39c;
         color: #fff;
       }
 
-      .divTransform {
+      .divMarginAuto {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
       }
 
       .bgBlue {
         background: #def;
         padding: 1rem;
+        box-sizing: border-box;
       }
     </style>
   </head>
@@ -71,10 +73,11 @@
       </div>
     </header>
     <section>
-      <div class="bgBlue divTransform">
-        使用transform实现页面垂直居中,因为transform是css3属性，在所有的移动端都可以正常显示。IE9+也可以正常显示。传统中margin为负的方法，在不知道浮动对象高宽的方式下，就不好居中了。
+      <div class="bgBlue divMarginAuto">
+        设置元素绝对定位上下左右距离为0，margin:0
+        auto来实现，同样也需要固定元素的宽高<br />
         <a
-          href="https://github.com/cosyer/positionCenter/blob/master/index.html"
+          href="https://github.com/cosyer/positionCenter/blob/master/margin-auto.html"
           >查看源代码</a
         >
       </div>
